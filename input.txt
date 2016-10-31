@@ -1,0 +1,92 @@
+person_with_telephone_and_email p3("Eleni","Tselektsidou","54545","tselek");
+
+person p("Dimi","Bougas");
+
+person_with_telephone p1("Dimi","Bougas","69qw12345");
+
+person_with_email p2("Dimi","Bougas","koskala");
+
+cout<<p<<endl;
+
+cout<<p2<<endl;
+
+cout<<"/////////////////"<<endl;
+
+person *pp = 0;
+
+while (read_person(cin, pp) && pp)
+
+cout << *pp << endl;
+
+
+if(p<p1)
+
+cout<<"success"<<endl;
+
+list<person *> l;
+
+list<person *>::iterator iter;
+
+l.push_back(&p);
+
+l.push_back(&p1);
+
+person_with_telephone p4("Cimi","Bougas","2345");
+
+
+for(iter=l.begin(); iter!=l.end();iter++)
+
+if(p4==**iter && p4.has_telephone_p() )
+
+{
+l.remove(*iter);
+iter=l.erase(iter);
+
+l.push_front(&p4); 
+
+}
+
+
+for(iter=l.begin(); iter!=l.end();iter++)
+
+cout<<**iter<<endl;
+
+
+contacts c;
+
+person john1("John", "John"),jim("jim","xalakat");
+c.add(&p);
+
+c.add(&p3);
+
+c.add(&p1);
+
+c.add(&john1);
+
+
+c.add(&jim);
+
+person_with_telephone john2("John", "John", "+33.02.0101.0202"),jim1("jim","xalaka","12345"),john3("John","papa","0902222");
+
+c.add(&john3);
+
+c.add(& john2);
+
+c.add(& jim1);
+
+c.print();
+
+cout<<"//////////////////"<<endl;
+
+vector<person*> v;
+
+c.find("John",v);
+
+for( unsigned int i=0;i<v.size();i++)
+
+cout<<*v[i]<<endl;
+
+c.in_order(cout);
+
+c.with_telephone(cout);
+
